@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>write</title>
+    </head>
+    <body>
+        <form action="" method="post">
+            {% comment %}
+                이런식으로도 form을 불러올 수 있다는 예시
+                {{ form.as_table }}
+                {{ form.as_p }}
+                {{ form.as_ul }}
+            {% endcomment %}
+            {{ form.as_p }}{% csrf_token %}
+            <!-- p태그로 form 생성 -->
+            <!-- 토큰 생성해서 전달하게 해야함 -->
+            <button type="submit" class="btn btn-primary">저장</button>
+        </form>
+    </body>
+</html>

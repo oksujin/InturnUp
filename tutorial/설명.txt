@@ -1,0 +1,89 @@
+//동작하는 방법
+1) http://192.168.10.99:8080/write : 글 작성화면 + db저장
+2) http://192.168.10.99:8080/list : 저장된 모든 글 목록
+3) http://192.168.10.99:8080/view/1 : 저장된 첫번째 글 내용
+4) list글 목록에서 제목 하이퍼링크 눌러서 내용 보기
+
+//서버 실행 방법
+1) cmd창 들어가서 cd tutorial
+2) python manage.py runserver 192.168.10.99:8080
+3) 종료는 ctrl+c
+
+//프로젝트 생성
+django-admin startproject tutorial
+
+//app 생성
+cd tutorial
+django-admin startapp community
+
+//구조확인
+tree 
+
+//db생성
+python manage.py migrate
+
+//superuser 생성
+python manage.py createsuperuser
+Username : admin
+Email address : admin@oneq.kr
+Password : 1234
+
+//server 구동 (웹페이지에 localhost:8080 하면 페이지 실행)
+python manage.py runserver 8080
+
++ 내 노트북 ip주소로 서버 설정하기
+1) cmd 창에서 ipconfig 명령어 입력해서 IPv4주소 확인 (이 노트북  주소 : 192.168.10.99)
+2) 작성한 프로젝트의 settings.py 에 들어가서 ALLOWED_HOSTS = '*'로 변경
+3) python manage.py runserver 192.168.10.99:8080
+4) 웹페이지에 192.168.10.99 입력
+5) 서버종료 : ctrl+c
+
++ admin 계정에서 할 수 있는 일
+user 관리 가능 / 특정 계정 삭제 가능 / 그룹 지정 가능
+db를 만들면 그 data를 확인,수정,삭제 가능
+
+//community app 추가하기
+vs code의 settings.py에
+INSTALLED_APPS = ['community', ] 마지막에 community(앱이름) 추가해주기 
+
+//그 후에 community app 구현하기
+1) model만들기 
+   : community의 models.py에 다양한 field를 활용하여 원하는 페이지 구현
+2) model을 database에 생성하기
+   : python manage.py makemigrations community
+   : vs code의 console창에서 진행했음. cmd에서 실패함
+3) model을 db에 적용하기 : 실제로 community란 table이 생성된다
+   : python manage.py migrate 
+   : cmd창도 가능 / 창 마지막줄에 Applying community.0001_initial...OK가 나온다
+
+
+//url 설정하기
+1) 상단에 from community.views import * 추가
+   tutorial의 urls.py의 urlpatterns에  아래 코드 추가
+   맨앞의 write/는 192.168.10.99:8080/write로 접근하겠다는 의미
+   두번재 write는 write 함수로 보내겠다는 의미
+   : path('write/', write, name="write)
+2)  write가 필요함
+   : community 위에서 오른쪽버튼 new folder => templates 생성
+     templates 위에서 오른쪽버튼 new file => write.html 생성
+3) write.html 에서 보여질 화면 구현
+
+//write.html에서 아까 model에서 만든 형태로 쉽게 게시판 form만들기
+//오우 여기부터 복잡해서 다 적을수가 없어요..
+1) community에 new file로 forms.py 생성 
+   및 model에서 구현한 field들 호출하기 위한 클래스 생성
+2) write.html에 form을 생성
+3) form 뒤에 {% csrf_token %} 붙여야함
+
+//list보는 화면 만들기
+1) urls.py에서 path 추가
+   path('list/', list, name='list')
+2) views.py에서 list 함수 추가
+3) templates-write.html을 복사해서 templates-list.html 생성
+4) list.html에서 불러오게 구현
+
+//url 바뀐버전 설명
+https://kimdoky.github.io/django/2018/01/06/django_2_difference.html
+
+
+
