@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 
 {% block contents %}
-<div class=row mt-5>
-    <div class="col-12">
-        <div class="form-group">
-            <label for="title">제목</label>
-            <input type="text" class="form-control" id="title" value=" {{board.title}} " readonly />
-            <label for="contents">내용</label>
-            <textarea class="form-control" readonly>{{ board.contents }}</textarea>
+<section class="pb_cover_v3 overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light">
+    <form action="#" class="bg-white rounded pb_form_v1">
+        <div class=row mt-5>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="title">제목</label>
+                    <input type="text" class="form-control" id="title" value=" {{board.title}} " readonly />
+                    <label for="contents">내용</label>
+                    <textarea class="form-control" readonly>{{ board.contents }}</textarea>
+                </div>
+                <button class="btn btn-primary" onclick="location.href='/board/list/'">돌아가기</button>
+            </div>
         </div>
-        <button class="btn btn-primary" onclick="location.href='/board/list/'">돌아가기</button>
-    </div>
-</div>
+    </form>
+</section>
 {% endblock %}
