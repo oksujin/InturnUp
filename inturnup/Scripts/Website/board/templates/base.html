@@ -36,17 +36,10 @@
             <div class="collapse navbar-collapse" id="probootstrap-navbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#section-home">Home</a></li>
-<<<<<<< HEAD
-                    <li class="nav-item"><a class="nav-link" href="#section-about">About us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#section-data">Data</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#section-commute">Commute</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#section-notice">Notice</a></li>
-=======
                     <li class="nav-item"><a class="nav-link" href="#section-features">About us</a></li>
-                    <li class="nav-item"><a class="nav-link" href ="{% url 'post_list' %}">Data</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'post_list' %}">Data</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section-pricing">Commute</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section-faq">Notice</a></li>
->>>>>>> 93a3756e40caf8ef4921a498117589948fbcf54f
                     <li class="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0"><a class="nav-link"
                             href="http://www.unipoint.co.kr/" target="_blank"><span
                                 class="pb_rounded-4 px-4">Unipoint</span></a></li>
@@ -54,10 +47,8 @@
             </div>
         </div>
     </nav>
-    <div class ="content container">
-        {% block contents %}
-        {% endblock %}
-    </div>
+    {% block contents %}
+    {% endblock %}
     <div id="pb_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
