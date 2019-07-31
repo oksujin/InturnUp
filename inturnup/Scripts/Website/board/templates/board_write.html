@@ -5,7 +5,8 @@
     <form action="#" class="bg-white rounded pb_form_v1">
         <div class="row mt-5">
             <div class="col-12">
-                <form method="POST" action=".">
+                {% comment %} <form method="POST" action="."> {% endcomment %}
+                <form method="POST" enctype="multipart/form-data" novalidate>
                     {% csrf_token %}
                     {% for field in form %}
                     <div class="form-group">
@@ -25,6 +26,12 @@
                     <button type="submit" class="btn btn-primary">글쓰기</button>
                     <button type="button" class="btn btn-primary" onclick="location.href='/board/list/'">돌아가기</button>
                 </form>
+                {% comment %} <form method="post" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Upload</button>
+                </form>
+                <a id="id_uploaded_file" href="{{ uploadFileModel.file.url }}" download>{ uploadFileModel.file.name }</a> {% endcomment %}
             </div>
         </div>
     </form>

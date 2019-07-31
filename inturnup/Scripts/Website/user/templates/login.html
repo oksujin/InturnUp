@@ -5,9 +5,9 @@
     id="section-home">
     <form action="#" class="bg-white rounded pb_form_v1">
         <div class="row mt-5">
+            {% comment %} <p class="mb-4"></P>
             <p class="mb-4"></P>
-            <p class="mb-4"></P>
-            <p class="mb-4"></P>
+            <p class="mb-4"></P> {% endcomment %}
             <div class="col-12 text-center">
 
                 <h class="heading mb-1"><b>로그인</b></h>
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-2">
+            <div class="col-4">
                 <form method="POST" action=".">
                     {% csrf_token %}
                     {% for field in form %}
@@ -34,5 +34,7 @@
                     {% endfor %}
                     <button type="submit" class="btn btn-primary">로그인</button>
                 </form>
+            </div>
+        </div>
 </section>
 {% endblock %}

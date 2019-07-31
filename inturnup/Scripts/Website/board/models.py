@@ -18,3 +18,7 @@ class Board(models.Model):
         db_table = 'inturnup_board'
         verbose_name = "유니포인트 인턴업 게시글"
         verbose_name_plural = "유니포인트 인턴업 게시글"
+
+class UploadFileModel(models.Model):
+        title = models.TextField(default='')
+        file = models.FileField(null=True)

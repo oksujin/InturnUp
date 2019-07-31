@@ -107,7 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
+
 
 USE_I18N = True
 
@@ -122,3 +123,6 @@ STATICFILES_DIRS = (
     "C:/InturnUp/inturnup/Scripts/Website/static",
     "C:/InturnUp/inturnup/Scripts/Website/static/Website",
 )
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
