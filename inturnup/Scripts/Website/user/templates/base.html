@@ -1,5 +1,4 @@
-{% load staticfiles %}
-
+{%load staticfiles%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,27 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Unipoint &mdash; INTURNUP PROJECT FOR INTERN</title>
+    <meta name="description" content="Free Bootstrap 4 Template by uicookies.com">
+    <meta name="keywords"
+        content="Free website templates, Free bootstrap themes, Free template, Free bootstrap, Free website template">
 
-    <link rel="stylesheet" href="{% static '/css/bootstrap/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static '/fonts/ionicons/css/ionicons.min.css' %}">
-    <link rel="stylesheet" href="{% static '/fonts/law-icons/font/flaticon.css' %}">
-
-    <link rel="stylesheet" href="{% static '/fonts/fontawesome/css/font-awesome.min.css'%} ">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400"
+        rel="stylesheet">
 
 
-    <link rel="stylesheet" href="{% static '/css/slick.css'%} ">
-    <link rel="stylesheet" href="{% static '/css/slick-theme.css'%}">
+    <!-- 수정된 부분 / 2줄 추가-->
+    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    -->
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
+    <!--<link rel="stylesheet" href="assets/fonts/law-icons/font/flaticon.css">
+    -->
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="{% static '/css/helpers.css'%}">
-    <link rel="stylesheet" href="{% static '/css/style.css'%}">
-    <link rel="stylesheet" href="{% static '/css/landing-2.css'%}">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+
+    <link rel="stylesheet" href="assets/css/helpers.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/landing-2.css">
 </head>
 
 <body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
 
     <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="pb-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">INTURNUP</a>
+            <a class="navbar-brand" href="index.html">INTURNUP
+            </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
                 data-target="#probootstrap-navbar" aria-controls="probootstrap-navbar" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -48,25 +58,23 @@
             </div>
         </div>
     </nav>
-    {% block contents %}
-    {% endblock %}
+    
     <div id="pb_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
                 stroke="#1d82ff" /></svg></div>
+    
 
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
 
-    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.easing.1.3.js"></script>
 
-    <script src="{% static 'js/popper.min.js'%}"></script>
-    <script src="{% static 'js/bootstrap.min.js'%}"></script>
-    <script src="{% static 'js/slick.min.js'%}"></script>
-    <script src="{% static 'js/jquery.mb.YTPlayer.min.js'%}"></script>
-
-    <script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
-    <script src="{% static 'js/jquery.easing.1.3.js'%}"></script>
-
-    <script src="{% static 'js/main.js'%}"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
