@@ -1,5 +1,5 @@
 from django import forms
-from .models import UploadFileModel
+from .models import Board
 
 class BoardForm(forms.Form):
     title = forms.CharField(

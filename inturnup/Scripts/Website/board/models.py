@@ -6,6 +6,7 @@ class Board(models.Model):
     title = models.CharField(max_length=128,
                              verbose_name='제목')
     contents = models.TextField(verbose_name='내용')
+    file = models.FileField(upload_to='documents/%Y/%m/%d', null=True)
     writer = models.ForeignKey('user.Uniuser', on_delete=models.CASCADE,
                                verbose_name='작성자')
     registered_dttm = models.DateTimeField(
@@ -19,6 +20,6 @@ class Board(models.Model):
         verbose_name = "유니포인트 인턴업 게시글"
         verbose_name_plural = "유니포인트 인턴업 게시글"
 
-class UploadFileModel(models.Model):
-        title = models.TextField(default='')
-        file = models.FileField(null=True)
+# class UploadFileModel(models.Model):
+#         title = models.TextField(default='')
+#         file = models.FileField(null=True)

@@ -2,10 +2,9 @@
 
 {% block contents %}
 <section class="pb_cover_v3 overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light">
-    <form action="#" class="bg-white rounded pb_form_v1">
+    <div class="bg-white rounded pb_form_v1">
         <div class="row mt-5">
             <div class="col-12">
-                {% comment %} <form method="POST" action="."> {% endcomment %}
                 <form method="POST" enctype="multipart/form-data" novalidate>
                     {% csrf_token %}
                     {% for field in form %}
@@ -34,6 +33,6 @@
                 <a id="id_uploaded_file" href="{{ uploadFileModel.file.url }}" download>{ uploadFileModel.file.name }</a> {% endcomment %}
             </div>
         </div>
-    </form>
+    </div>
 </section>
 {% endblock %}
