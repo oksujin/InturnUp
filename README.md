@@ -1,9 +1,9 @@
-# Intern UP!
+# INTURNUP
 
-## °³¿ä
-´Ü±â ÀÎÅÏµéÀ» À§ÇÑ ÀÎÅÏ °ü¸® À¥ ÆäÀÌÁö.
+## ê°œìš”
+ë‹¨ê¸° ì¸í„´ë“¤ì„ ìœ„í•œ ì¸í„´ ê´€ë¦¬ ì›¹ íŽ˜ì´ì§€.
 
-## °³¹ßÈ¯°æ
+## ê°œë°œí™˜ê²½
 - Django  2.2.3
 - python  3.7.2
 - Windows
