@@ -1,18 +1,27 @@
 {% extends "base.html" %}
 
 {% block contents %}
-<div class="row mt-5">
-    <div class="col-12">
+<script>
+    function resize(obj) {
+      obj.style.height = "1px";
+      obj.style.height = (12+obj.scrollHeight)+"px";
+    }
+</script>
+
+
+<div class="row mt-5 justify-content-center">
+    <div class="col-7">
         <form method="POST" action=".">
             {% csrf_token %}
             {% for field in form %}
             <div class="form-group">
                 <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                 {% ifequal field.name 'contents' %}
-                <textarea class="form-control" name="{{ field.name }}" placeholder="{{ field.label }}"></textarea>
+                <textarea class="form-control" name="{{ field.name }}" placeholder="{{ field.label }}" 
+                    onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
                 {% else %}
                 <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}"
-                    placeholder="{{ field.label }}" name="{{ field.name }}" />
+                    placeholder="{{ field.label }}" name="{{ field.name }}"/>
                 {% endifequal %}
             </div>
             {% if field.errors %}
@@ -21,6 +30,7 @@
             {% endfor %}
             <button type="submit" class="btn btn-primary">글쓰기</button>
             <button type="button" class="btn btn-primary" onclick="location.href='/board/list/'">돌아가기</button>
+            <button type="button" class="btn btn-primary" onclick="location.href='/board/list/'">업로드</button>
         </form>
     </div>
 </div>
