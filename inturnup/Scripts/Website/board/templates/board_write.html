@@ -8,30 +8,32 @@
     }
 </script>
 
-
-<div class="row mt-5 justify-content-center">
-    <div class="col-7">
-        <form method="POST" action=".">
-            {% csrf_token %}
-            {% for field in form %}
-            <div class="form-group">
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {% ifequal field.name 'contents' %}
-                <textarea class="form-control" name="{{ field.name }}" placeholder="{{ field.label }}" 
-                    onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
-                {% else %}
-                <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}"
-                    placeholder="{{ field.label }}" name="{{ field.name }}"/>
-                {% endifequal %}
+<section class="pb_cover_v3 overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light">
+    <form action="#" class="bg-white rounded pb_form_v1">
+        <div class="row mt-5">
+            <div class="col-12">
+                <form method="POST" action=".">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="form-group">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {% ifequal field.name 'contents' %}
+                        <textarea class="form-control" name="{{ field.name }}" placeholder="{{ field.label }}" 
+                            onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+                        {% else %}
+                        <input type="{{ field.field.widget.input_type }}" class="form-control"
+                            id="{{ field.id_for_label }}" placeholder="{{ field.label }}" name="{{ field.name }}" />
+                        {% endifequal %}
+                    </div>
+                    {% if field.errors %}
+                    <span style="color: red">{{ field.errors }}</span>
+                    {% endif %}
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">글쓰기</button>
+                    <button type="button" class="btn btn-primary" onclick="location.href='/board/list/'">돌아가기</button>
+                </form>
             </div>
-            {% if field.errors %}
-            <span style="color: red">{{ field.errors }}</span>
-            {% endif %}
-            {% endfor %}
-            <button type="submit" class="btn btn-primary">글쓰기</button>
-            <button type="button" class="btn btn-primary" onclick="location.href='/board/list/'">돌아가기</button>
-            <button type="button" class="btn btn-primary" onclick="location.href='/board/list/'">업로드</button>
-        </form>
-    </div>
-</div>
+        </div>
+    </form>
+</section>
 {% endblock %}
