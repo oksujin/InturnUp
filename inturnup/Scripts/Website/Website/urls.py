@@ -22,4 +22,5 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path("board/", include('board.urls')),
     path('', home),
+    path('commute/', include('commute.urls')),
 ]

@@ -3,25 +3,26 @@
 {% block contents %}
 <section class="pb_cover_v3 overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light"
     id="section-data">
-    <div class="bg-white rounded pb_form_v1">
-        <div class="row mt-5">
-            <div class="col-12">
+    <div style="padding:50px;">
+    </div>
+    <form action="#" class="bg-white rounded pb_form_v1">
+        <div class="row justify-content-center">
+            <div class="col-6">
                 <table class="table table-light">
                     <thead class="thead-light">
                         <tr>
                             <th></th>
-                            <th>제목</th>
-                            <th>아이디</th>
-                            <th>일시</th>
+                            <th>인턴</th>
+                            <th>출근</th>
+                            <th>퇴근</th>
                         </tr>
                     </thead>
                     <tbody class="text-dark">
-                        {% for board in boards %}
-                        <tr onclick="location.href='/board/detail/{{ board.id }}/'">
-                            <th>{{ board.id }}</th>
-                            <td>{{ board.title }}</td>
-                            <td>{{ board.writer }}</td>
-                            <td>{{ board.registered_dttm }}</td>
+                        {% for commute in commutes %}
+                        <th>{{ commute.id }}</th>
+                        <td>{{ commute.commuter }}</td>
+                        <td>{{ commute.registered_go_work }}</td>
+                        <td>{{ commute.registered_off_work }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -57,12 +58,11 @@
                 </nav>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
+        <div class="row justify-content-center">
+            <div class="col-6">
                 <button type="submit" class="btn btn-primary" onclick="location.href='/'">돌아가기</button>
-                <button class="btn btn-primary" onclick="location.href='/board/write/'">글쓰기</button>
             </div>
         </div>
-    </div>
+    </form>
 </section>
 {% endblock %}

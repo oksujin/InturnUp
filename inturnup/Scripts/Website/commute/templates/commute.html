@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<section class="pb_section  overflow-hidden cover-bg-indigo cover-bg-opacity pb_gradient_v1 pb_slant-light">
+    <div style="padding:50px;">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <div class="pb_pricing_v1 p-5 border border-primary text-center bg-white">
+                    <span class="price">출근 기록부</span>
+                    <br>
+                    <span class="price"><span>출근 시 버튼을 눌러주세요.</span></span>
+                    <div style="padding:10px;">
+                        <form method="POST" action=".">
+                            <p class="mb-0"><a href="#" role="button" class="btn btn-primary btn-shadow-blue">출근</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md">
+                <div class="pb_pricing_v1 p-5 border border-primary text-center bg-white">
+                    <span class="price">퇴근 기록부</span>
+                    <br>
+                    <span class="price"><span>퇴근 시 버튼을 눌러주세요.</span></span>
+                    <div style="padding:10px;">
+                        <form method="POST" action=".">
+                            <p class="mb-0"><a href="#" role="button" class="btn btn-primary btn-shadow-blue">퇴근</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

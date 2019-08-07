@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{% static '/css/helpers.css'%}">
     <link rel="stylesheet" href="{% static '/css/style.css'%}">
     <link rel="stylesheet" href="{% static '/css/landing-2.css'%}">
+    {% block header %}
+    {% endblock %}
 </head>
 
 <body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
@@ -39,7 +41,7 @@
                     <li class="nav-item"><a class="nav-link" href="#section-home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section-features">About us</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'post_list' %}">Data</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#section-pricing">Commute</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'post_commute' %}">Commute</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section-faq">Notice</a></li>
 
                     <li class="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0"><a class="nav-link"

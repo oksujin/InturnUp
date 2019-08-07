@@ -11,4 +11,4 @@ class BoardForm(forms.Form):
         error_messages={
             'required': '내용을 입력해주세요.'
         },
-        widget=forms.Textarea, label="내용")
+        max_length=128, label="내용")
