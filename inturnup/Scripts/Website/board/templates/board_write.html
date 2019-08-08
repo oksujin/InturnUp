@@ -1,8 +1,18 @@
 {% extends "base.html" %}
-
+{% block header %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#id_contents').summernote({
+            height: 300
+        });
+    });
+</script>
+{% endblock %}
 {% block contents %}
 <section class="pb_cover_v3 overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light">
-    <form action="#" class="bg-white rounded pb_form_v1">
+    <div action="#" class="bg-white rounded pb_form_v1">
         <div class="row mt-5">
             <div class="col-12">
                 <form method="POST" action=".">
@@ -27,6 +37,6 @@
                 </form>
             </div>
         </div>
-    </form>
+    </div>
 </section>
 {% endblock %}

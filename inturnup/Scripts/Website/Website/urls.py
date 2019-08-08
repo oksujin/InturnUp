@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('user.urls')),
     path("board/", include('board.urls')),
-    path('', home),
+    path('', home, name ='home'),
+    path('commute/', include('commute.urls')),
 ]
